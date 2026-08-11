@@ -1,0 +1,21 @@
+# Data files — never commit (too big, and raw data isn't code)
+data/
+*.csv
+*.zip
+
+# Python virtual environment
+.venv/
+__pycache__/
+*.pyc
+
+# dbt artifacts
+target/
+dbt_packages/
+logs/
+
+# Credentials — NEVER commit
+.env
+profiles.yml
+
+# OS files
+.DS_Store
