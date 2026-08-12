@@ -1,0 +1,20 @@
+version: 2
+models:
+  - name: int_trips_enriched
+    columns:
+      - name: ride_id
+        tests: [unique, not_null]
+  - name: fct_daily_demand
+    columns:
+      - name: rides
+        tests: [not_null]
+      - name: member_casual
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['member', 'casual']
+  - name: fct_hourly_pattern
+  - name: fct_rider_summary
+    columns:
+      - name: member_casual
+        tests: [unique, not_null]

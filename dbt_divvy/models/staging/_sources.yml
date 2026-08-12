@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: raw
+    database: DIVVY
+    schema: RAW
+    tables:
+      - name: divvy_trips
+      - name: weather_hourly
+      - name: holidays

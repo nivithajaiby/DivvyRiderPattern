@@ -1,0 +1,21 @@
+name: 'divvy_rider_patterns'
+version: '1.0.0'
+config-version: 2
+
+profile: 'divvy_rider_patterns'
+
+model-paths: ["models"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  divvy_rider_patterns:
+    staging:
+      +materialized: view
+      +schema: staging
+    intermediate:
+      +materialized: view
+      +schema: staging
+    marts:
+      +materialized: table
+      +schema: marts

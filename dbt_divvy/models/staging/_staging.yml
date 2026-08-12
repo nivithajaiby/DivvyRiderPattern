@@ -1,0 +1,22 @@
+version: 2
+models:
+  - name: stg_divvy_trips
+    columns:
+      - name: ride_id
+        tests: [unique, not_null]
+      - name: member_casual
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['member', 'casual']
+      - name: trip_hour
+        tests: [not_null]
+  - name: stg_weather
+    columns:
+      - name: weather_hour
+        tests: [unique, not_null]
+  - name: stg_holidays
+    columns:
+      - name: holiday_date
+        tests: [unique, not_null]

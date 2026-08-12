@@ -1,0 +1,17 @@
+# Copy this to ~/.dbt/profiles.yml and fill in your Snowflake details.
+# This file holds credentials — never commit the filled-in version to git.
+
+divvy_rider_patterns:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: "<identifier-from-your-snowflake-URL>"   # e.g. abcd-xy12345 (NOT the full URL)
+      user: "<your-username>"
+      password: "<your-password>"
+      role: "ACCOUNTADMIN"
+      warehouse: "COMPUTE_WH"
+      database: "DIVVY"
+      schema: "DBT"
+      threads: 4
+      client_session_keep_alive: false
