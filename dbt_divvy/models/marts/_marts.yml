@@ -13,6 +13,20 @@ models:
           - accepted_values:
               arguments:
                 values: ['member', 'casual']
+  - name: fct_daypart_demand
+    columns:
+      - name: rides
+        tests: [not_null]
+      - name: daypart
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['morning', 'afternoon', 'evening', 'overnight']
+      - name: member_casual
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['member', 'casual']
   - name: fct_hourly_pattern
   - name: fct_rider_summary
     columns:
